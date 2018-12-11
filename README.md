@@ -12,12 +12,12 @@ this is my introduction
 
 ## Issues
 
-## Git Command 
+## Git Command
 
-//delete local branch 
+//delete local branch
 git branch -d dev
 
-//delete remote branch 
+//delete remote branch
 git branch -d -d dev
 
 //set up to track remote branch from origin

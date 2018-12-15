@@ -45,12 +45,12 @@ steps to create new branch and work on with it and sync with remote branch and c
 > (after remote branch merge remote master) git push origin --delete dev
 
 create a package
-> 'sfdx force:package:create --name ltncmp2 --description "all stuff from Trailhead ltncmp practice"'\
+> sfdx force`:package:`create --name ltncmp2 --description "all stuff from Trailhead ltncmp practice"\
 > --packagetype Unlocked --path force-app --nonamespace --targetdevhubusername DevHub
 
 create a package version
-> sfdx force:package:version:create -p ltncmp2 -d force-app -k test1234 --wait 10 -v DevHub
+> sfdx force`:package:`version:create -p ltncmp2 -d force-app -k test1234 --wait 10 -v DevHub
 
 install a package version
-> sfdx force:package:install --wait 10 --publishwait 10 --package ltncmp2@1.0.0-1\
+> sfdx force`:package:`install --wait 10 --publishwait 10 --package ltncmp2@1.0.0-1\
 > -ktest1234 -r -u DevHub

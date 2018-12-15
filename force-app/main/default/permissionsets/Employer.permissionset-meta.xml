@@ -12,7 +12,17 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Employer__c.Last_Performance_Review_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Employer__c.LinkedIn_Url__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Employer__c.Next_Performance_Review_Date__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

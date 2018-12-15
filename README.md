@@ -18,7 +18,7 @@ delete local branch:
 > git branch -d dev
 
 delete remote branch:
-> git branch -d -d dev
+> git branch -d -r dev
 
 set up to track remote branch from origin:
 > git branch -u origin/dev

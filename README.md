@@ -22,6 +22,7 @@ delete remote branch:
 
 set up to track remote branch from origin:
 > git branch -u origin/dev
+or
 > git push origin --delete dev
 
 create a new local branch and sync it to a new remote branch:

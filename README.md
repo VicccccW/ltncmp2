@@ -49,7 +49,7 @@ create a package
 > --packagetype Unlocked --path force-app --nonamespace --targetdevhubusername DevHub
 
 create a package version
-> sfdx force":package:"version:create -p ltncmp2 -d force-app -k test1234 --wait 10 -vDevHub
+> sfdx force':package:'version:create -p ltncmp2 -d force-app -k test1234 --wait 10 -vDevHub
 
 install a package version
 > sfdx force:package:install --wait 10 --publishwait 10 --package ltncmp2@1.0.0-1\

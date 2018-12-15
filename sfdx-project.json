@@ -1,11 +1,18 @@
 {
-  "packageDirectories": [
-    {
-      "path": "force-app",
-      "default": true
+    "packageDirectories": [
+        {
+            "path": "force-app",
+            "default": true,
+            "package": "ltncmp2",
+            "versionName": "Version 1.0",
+            "versionNumber": "1.0.0.NEXT"
+        }
+    ],
+    "namespace": "",
+    "sfdcLoginUrl": "https://login.salesforce.com",
+    "sourceApiVersion": "44.0",
+    "packageAliases": {
+        "ltncmp2": "0Ho6F000000blO9SAI",
+        "ltncmp2@1.0.0-1": "04t6F000004DDzyQAG"
     }
-  ],
-  "namespace": "",
-  "sfdcLoginUrl": "https://login.salesforce.com",
-  "sourceApiVersion": "44.0"
 }

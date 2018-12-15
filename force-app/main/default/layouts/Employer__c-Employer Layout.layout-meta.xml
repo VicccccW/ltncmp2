@@ -34,6 +34,10 @@
                 <behavior>Edit</behavior>
                 <field>Next_Performance_Review_Date__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Technical_Level__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>

@@ -1,0 +1,6 @@
+<aura:component >
+    
+    <p>Hello Lightning!</p>
+    <p>This is from VS Code</p>
+    
+</aura:component>

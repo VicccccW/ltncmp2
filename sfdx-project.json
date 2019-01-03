@@ -13,6 +13,7 @@
     "sourceApiVersion": "44.0",
     "packageAliases": {
         "ltncmp2": "0Ho6F000000blO9SAI",
-        "ltncmp2@1.0.0-1": "04t6F000004DDzyQAG"
+        "ltncmp2@1.0.0-1": "04t6F000004DDzyQAG",
+        "ltncmp2@1.0.0-2": "04t6F000004DEFmQAO"
     }
 }

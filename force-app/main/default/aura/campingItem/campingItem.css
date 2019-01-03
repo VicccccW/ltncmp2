@@ -1,0 +1,25 @@
+.THIS.slds-card.slds-theme_success .slds-form-element__label {
+    color: grey;
+}
+
+.THIS.slds-card.slds-theme_success .slds-text-title {
+    color: grey;
+}
+
+.THIS.slds-card.slds-theme_success {
+    background-color: rgb(253, 246, 226);
+    color: grey;
+}
+
+.THIS.slds-card.slds-theme_success .slds-checkbox_on {
+    color: grey;
+}
+
+.THIS.slds-card.slds-theme_success 
+.slds-checkbox_toggle 
+[type="checkbox"][disabled] + .slds-checkbox_faux_container .slds-checkbox_faux  {
+    background-color: rgb(4, 132, 75);
+    border-color: rgb(4, 132, 75);
+}
+
+

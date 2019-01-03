@@ -1,0 +1,34 @@
+<aura:component controller="CampingFormController">
+    <aura:attribute name="items" type="Camping_Item__c[]"/>
+
+    <aura:handler name="init" action="{!c.doInit}" value="{!this}"/>
+    <aura:handler name="itemCreateEve" event="c:campingItemCreate" action="{!c.handleItemCreate}"/>
+    <aura:handler name="itemUpdateEve" event="c:campingItemUpdate" action="{!c.handleItemUpdate}"/>
+
+    <c:campingHeader/>
+    
+    <!-- NEW ITEM FORM -->
+    <lightning:layout>
+            <lightning:layoutItem padding="around-small" size="6">
+            
+                <c:campingForm/>
+
+            </lightning:layoutItem>
+    </lightning:layout>
+    <!-- / NEW ITEM FORM -->
+
+    <lightning:layout>
+        <lightning:layoutItem padding="around-small" size="6">
+            
+            <c:campingItemsList items="{!v.items}"/>
+        
+        </lightning:layoutItem>
+        
+        <lightning:layoutItem padding="around-small" size="6">
+
+            Put something cool here
+    
+        </lightning:layoutItem>
+    </lightning:layout>
+
+</aura:component>	

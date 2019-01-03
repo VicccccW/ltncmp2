@@ -1,22 +1,66 @@
-<aura:component>
+<aura:component controller="ExpensesController">
+    <aura:attribute name="expenses" type="Expense__c[]"/>
+    
+    <!--
+        The <aura:handler> tag is how you say that a component can handle a specific event. 
+        In this case, we’re saying that we’ll handle the init event, 
+        and that we’ll handle it with the doInit action handler in our controller. 
+        (Setting value="{!this}" marks this as a “value event.” 
+        What this means is too complex to go into here. 
+        Just know that you should always add this attribute-value pair to an init event.)
+    -->      
+                
+    <aura:handler name="init" action="{!c.doInit}" value="{!this}"/>
+
+    <!--
+        register expenses to receive and handle the updateExpense event.
+    -->
+    <!--
+        knowing how this receiver “socket” in expenses matches up with the sender “socket” in expenseItem.
+    -->
+    <aura:handler name="updateExpense" event="c:expensesItemUpdate" action="{!c.handleUpdateExpense}"/>
+    <aura:handler name="createExpense" event="c:expensesItemUpdate" action="{!c.handleCreateExpense}"/>
+
     <!-- PAGE HEADER -->
-    <lightning:layout class="slds-page-header slds-page-header--object-home">
+    <lightning:layout class="slds-page-header slds-page-header_object-home">
         <lightning:layoutItem>
             <lightning:icon iconName="standard:scan_card" alternativeText="My Expenses"/>
         </lightning:layoutItem>
         <lightning:layoutItem padding="horizontal-small">
             <div class="page-section page-header">
-                <h1 class="slds-text-heading--label">Expenses</h1>
-                <h2 class="slds-text-heading--medium">My Expenses</h2>
+                <h1 class="slds-text-heading_label">Expenses</h1>
+                <h2 class="slds-text-heading_medium">My Expenses</h2>
             </div>
         </lightning:layoutItem>
     </lightning:layout>
     <!-- / PAGE HEADER -->
+    
     <!-- NEW EXPENSE FORM -->
     <lightning:layout>
         <lightning:layoutItem padding="around-small" size="6">
-        <!-- [[ expense form goes here ]] -->
+        
+            <c:expenseForm/>
+
         </lightning:layoutItem>
     </lightning:layout>
     <!-- / NEW EXPENSE FORM -->
+
+    <!--
+        <c:expensesList expenses="{!v.expenses}"/>
+    -->
+
+    <lightning:layout>
+        <lightning:layoutItem padding="around-small" size="6">
+            
+            <c:expensesList expenses="{!v.expenses}"/>
+
+        </lightning:layoutItem>
+        
+        <lightning:layoutItem padding="around-small" size="6">
+
+            Put something cool here
+            
+        </lightning:layoutItem>
+    </lightning:layout>
+
 </aura:component>

@@ -1,0 +1,62 @@
+<!-- <aura:component implements="flexipage:availableForRecordHome,force:lightningQuickActionWithoutHeader,force:hasRecordId"
+                access="global">
+
+    <aura:attribute name="recordId" type="Id" />
+    <aura:attribute name="record" type="Object"/>
+    <aura:attribute name="simpleRecord" type="Object"/>
+    <aura:attribute name="recordError" type="String"/>
+
+    <force:recordData aura:id="record"
+      recordId="{!v.recordId}"
+      layoutType="FULL"
+      fields="ROI_City__c, ROI_Location__Latitude__s, ROI_Location__Longitude__s"
+      targetRecord="{!v.record}"
+      targetFields="{!v.simpleRecord}"
+      targetError="{!v.recordError}"
+      recordUpdated="{!c.handleRecordUpdated}"
+      mode="VIEW"
+      />
+
+    <lightning:card iconName="action:map" title="Latest ROI Location" >
+        <div class="slds-p-horizontal_small">
+            <p class="slds-text-heading_small">
+                ROI City: 
+            </p>
+                    <lightning:formattedText value="{!v.simpleRecord.ROI_City__c}" />
+            <p class="slds-text-heading_small">
+                Geolocations: 
+            </p>
+                <lightning:formattedLocation latitude="{!v.simpleRecord.ROI_Location__Latitude__s}" longitude="{!v.simpleRecord.ROI_Location__Longitude__s}"/>
+        </div>
+    </lightning:card>
+
+    <aura:if isTrue="{!not(empty(v.recordError))}">
+        <div class="recordError">
+            {!v.recordError}
+        </div>
+    </aura:if>
+</aura:component> -->
+
+
+
+
+
+
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,force:hasRecordId,forceCommunity:availableForAllPageTypes"
+                access="global">
+
+    <aura:attribute name="recordId" type="Id" />
+    <lightning:card iconName="action:map" title="Latest ROI Location" >
+    <lightning:recordViewForm recordId="{! v.recordId }" objectApiName="Account">
+        <div class="slds-grid">
+            <div class="slds-col slds-size_1-of-2">
+                <lightning:outputField fieldName="ROI_City__c" />
+            </div>
+            <div class="slds-col slds-size_1-of-2">
+                <lightning:outputField fieldName="ROI_Location__Latitude__s" />
+                <lightning:outputField fieldName="ROI_Location__Longitude__s" />
+            </div>
+        </div>
+    </lightning:recordViewForm>
+    </lightning:card>
+</aura:component>

@@ -1,0 +1,21 @@
+<aura:component description="AccountContactMap"
+                controller="AccountContactMapController"
+                implements="force:appHostable,flexipage:availableForAllPageTypes,force:hasRecordId,forceCommunity:availableForAllPageTypes"
+                access="global">
+                
+    <!-- attributes -->
+    <aura:attribute name="recordId" type="Id" />
+
+    <aura:attribute name="mapMarkers" type="Object"/>
+    <aura:attribute name="zoomLevel" type="Integer" />
+
+    <!-- handlers-->
+    <aura:handler name="init" value="{! this }" action="{! c.doInit }"/>
+
+    <!-- the map component -->
+    <aura:if isTrue="{!v.mapMarkers.length > 0}" >
+    <lightning:map
+            mapMarkers="{!v.mapMarkers }"
+            zoomLevel="{!v.zoomLevel}" />
+    </aura:if>
+</aura:component>

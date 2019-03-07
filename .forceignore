@@ -6,3 +6,7 @@ package.xml
 **/jsconfig.json
 
 **/.eslintrc.json
+
+**objectTranslations
+
+/force-app/main/default/objectTranslations/Contact_Location_Updated__e.objectTranslation

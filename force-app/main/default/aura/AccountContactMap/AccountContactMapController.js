@@ -1,8 +1,8 @@
 ({
-    doInit : function (cmp, event, helper) {
+    doInit : function (component, event, helper) {
 
-        var action = cmp.get("c.getAccount");
-        var recordId = cmp.get("v.recordId");
+        var action = component.get("c.getAccount");
+        var recordId = component.get("v.recordId");
 
         action.setParams({
             "recordId" : recordId
@@ -25,45 +25,43 @@
                         description: 'Account Latest Contact Location'
                     }
                 ];
-                cmp.set('v.zoomLevel', 10);
-                cmp.set('v.mapMarkers', mapMarkers);
+                component.set('v.zoomLevel', 10);
+                component.set('v.mapMarkers', mapMarkers);
             }
-
         });
         
         $A.enqueueAction(action);
 
-        const empApi = cmp.find('empApi');
+        // const empApi = component.find('empApi');
+        // const errorHandler = function (error) {
+        //     console.error('EMP API error: ', JSON.stringify(error));
+        // };
+    //     const channel = '/event/Contact_Location_Updated__e';
+    //     const replayId = -1;
 
-        empApi.onError($A.getCallback(error => {
-            console.error('EMP API error: ', error);
-        }));
+    //     empApi.onError($A.getCallback(error => {
+    //         console.error('EMP API error: ', error);
+    //     }));
+        // empApi.onError($A.getCallback(errorHandler));
+        // helper.subscribe(component, event, helper);
 
-        const channel = '/event/Contact_Location_Updated__e';
-
-        const replayId = -1;
-
-        empApi.subscribe(channel, replayId, $A.getCallback(eventReceived  => {
-            console.log('Received event ', JSON.stringify(eventReceived));
-            console.log('data is ', JSON.stringify(eventReceived.data));
-            console.log('payload is ', JSON.stringify(eventReceived.data.payload));
-            console.log('ROI_Latitude__c is ', JSON.stringify(eventReceived.data.payload.ROI_Latitude__c));
-            console.log('ROI_Longitude__c is ', JSON.stringify(eventReceived.data.payload.ROI_Longitude__c));
-            var mapMarkers = [
-                {
-                    location: {
-                        'Latitude': eventReceived.data.payload.ROI_Latitude__c,
-                        'Longitude': eventReceived.data.payload.ROI_Longitude__c
-                    },
-                    description: 'Account Latest Contact Location'
-                }
-            ];
-            cmp.set('v.zoomLevel', 10);
-            cmp.set('v.mapMarkers', mapMarkers);
-        }));
-
-
-
-
-    }
+    //     empApi.subscribe(channel, replayId, $A.getCallback(eventReceived  => {
+    //         console.log('Received event ', JSON.stringify(eventReceived));
+    //         console.log('data is ', JSON.stringify(eventReceived.data));
+    //         console.log('payload is ', JSON.stringify(eventReceived.data.payload));
+    //         console.log('ROI_Latitude__c is ', JSON.stringify(eventReceived.data.payload.ROI_Latitude__c));
+    //         console.log('ROI_Longitude__c is ', JSON.stringify(eventReceived.data.payload.ROI_Longitude__c));
+    //         var mapMarkers = [
+    //             {
+    //                 location: {
+    //                     'Latitude': eventReceived.data.payload.ROI_Latitude__c,
+    //                     'Longitude': eventReceived.data.payload.ROI_Longitude__c
+    //                 },
+    //                 description: 'Account Latest Contact Location'
+    //             }
+    //         ];
+    //         cmp.set('v.zoomLevel', 10);
+    //         cmp.set('v.mapMarkers', mapMarkers);
+    //     }));
+     }
 })

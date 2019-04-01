@@ -15,7 +15,7 @@
     <!-- the map component -->
     <aura:if isTrue="{!v.mapMarkers.length > 0}" >
     <lightning:map
-            mapMarkers="{!v.mapMarkers }"
+            mapMarkers="{!v.mapMarkers }"`
             zoomLevel="{!v.zoomLevel}" />
     </aura:if>
 </aura:component>
